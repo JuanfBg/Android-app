@@ -3,9 +3,13 @@ package co.edu.konradlorenz.myapplication;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -19,11 +23,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
 
-
-
-
-
-
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -33,22 +32,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent1 = new Intent(MapsActivity.this, MainActivity.class);
+                    Intent intent1 = new Intent(MapsActivity.this, MapsActivity.class);
                     startActivity(intent1);
 
                     return true;
 
                 case R.id.navigation_sesion:
-                    mTextMessage.setText(R.string.title_sesion);
+               //     mTextMessage.setText(R.string.title_sesion);
                     Intent intent = new Intent(MapsActivity.this, LoginActivity.class);
                     startActivity(intent);
 
                     return true;
 
                 case R.id.navigation_money:
-                    mTextMessage.setText(R.string.title_money);
+                   // mTextMessage.setText(R.string.title_money);
 
-                    Intent intent2 = new Intent(MapsActivity.this, Presupuesto.class);
+                    Intent intent2 = new Intent(MapsActivity.this, BudgetActivity.class);
                     startActivity(intent2);
 
                     return true;
@@ -57,6 +56,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
     };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +70,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        FloatingActionButton button = (FloatingActionButton) findViewById(R.id.fab_add_restaurant);
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MapsActivity.this, BudgetActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
+
 
 
     /**
@@ -96,4 +105,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,20));
 
     }
+
+
 }

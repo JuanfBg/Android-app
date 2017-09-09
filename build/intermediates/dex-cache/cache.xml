@@ -3,30 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\juanf\.android\build-cache\bad08a3b73c009ce8dfb5bd0b83006e8a25574e8\output\jars\classes.jar"
+        jar="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6c811aa2dbfa037d09f8783350a2761a159a6d17\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\juanf\.android\build-cache\94a5ce61f61d17cfb361d709cd4b1ee6844bb08c\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
-        <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_691652bf710a56fa7e6b19e615c583002e570908\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\juanf\.android\build-cache\935e82da28f57fd94a4d1e680423d6814f1c0f72\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
-        <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1912bd892d4f8b92155b723f1a9f423f206cb42a\classes.dex" />
+        sha1="95dff8258903555d5b1fb7316503be45c90526d1">
+        <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_4f7dd5d09d892b4a9fb7aa4409aa9e76bc1f8085\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -36,69 +18,6 @@
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_0dd3cd1022f8f60984f4eaf9e2c539fe548fd5bc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\juanf\.android\build-cache\5d71a3c6b718729da987c97d0fff21c6708070a0\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="2430e711762a749feb00b3d64858ca4768251b9d">
-        <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ec1621d89d5c598adf27bb7686ec262ac7492869\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\juanf\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_b41be6d036f34a6ff48dc1f72f5b3c12f2b9ef66\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\juanf\.android\build-cache\629d22243ad6725bc7965697b5636734037f0cd5\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
-        <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_60711b78bc0eeee2b7d22ff7c4c093504e12835b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\juanf\.android\build-cache\9c01c968462705b10eac8e831cfb9e5724aac271\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="364364bf77b4a71afc5930fc3ae57b3f0eea637c">
-        <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c8afc42b9f9d754e4f95b70df7b879e60e070a6c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="276fff8f0fc1dc5678eae3b0457f502d21b54b19">
-        <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_4f7dd5d09d892b4a9fb7aa4409aa9e76bc1f8085\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\juanf\.android\build-cache\00938d8d0bc4fc82299f875937570a72049d8750\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="fcae52a60bc07924d370b4d376116cd8f8581f54">
-        <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_50e8f09e3f10ab2a9e78ab64c4ca43c5ba7e9bc0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\juanf\.android\build-cache\612603581459c9411e331374768e8d8119a3c068\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="70ffe00aaf049893f59d1dad57bd82992faa38ef">
-        <dex dex="C:\Users\juanf\Desktop\Nueva carpeta\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_265d17cf238bee465e5ca82c8b68b718ebf4c3b5\classes.dex" />
     </item>
 
 </items>
