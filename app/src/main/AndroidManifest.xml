@@ -49,13 +49,18 @@
         <activity
             android:name=".Presupuesto"
             android:label="@string/title_activity_presupuesto" />
+
         <activity
             android:name=".AccountActivity"
             android:label="@string/title_activity_account"
             android:theme="@style/AppTheme.NoActionBar" />
+
+
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login">
+
+        </activity>
     </application>
 
 </manifest>
