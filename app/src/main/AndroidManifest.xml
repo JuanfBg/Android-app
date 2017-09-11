@@ -44,20 +44,34 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
+=======
+            android:name=".Presupuesto"
+            android:label="@string/title_activity_presupuesto" />
+
+>>>>>>> 988257f3fa1adb2bc550967e9f79e41eafa521e2
         <activity
             android:name=".AccountActivity"
             android:label="@string/title_activity_account"
             android:theme="@style/AppTheme.NoActionBar" />
+
+
         <activity
             android:name=".LoginActivity"
+<<<<<<< HEAD
             android:label="@string/title_activity_login" />
         <activity android:name=".BudgetActivity" />
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+=======
+            android:label="@string/title_activity_login">
+
+        </activity>
+>>>>>>> 988257f3fa1adb2bc550967e9f79e41eafa521e2
     </application>
 
 </manifest>

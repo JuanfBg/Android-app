@@ -15,5 +15,4 @@
         android:id="@+id/navigation_money"
         android:icon="@drawable/ic_attach_money_black_24dp"
         android:title="@string/title_money" />
-
 </menu>
