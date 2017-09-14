@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.edu.konradlorenz.myapplication.AddRestaurantActivity">
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    tools:context="co.edu.konradlorenz.myapplication.AddRestaurantActivity"
+    android:layout_margin="@dimen/text_margin">
+
 
 
     <FrameLayout
@@ -29,11 +28,13 @@
                 android:id="@+id/email_login_form"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="368dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="16px"
                     tools:layout_editor_absoluteX="8dp"
                     tools:layout_editor_absoluteY="0dp">
 
@@ -64,6 +65,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="368dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="16px"
                     tools:layout_editor_absoluteX="8dp"
                     tools:layout_editor_absoluteY="0dp">
 
@@ -86,6 +88,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="368dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="16px"
                     tools:layout_editor_absoluteX="8dp"
                     tools:layout_editor_absoluteY="0dp">
 
@@ -108,6 +111,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="368dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="16px"
                     tools:layout_editor_absoluteX="8dp"
                     tools:layout_editor_absoluteY="0dp">
 
@@ -128,11 +132,24 @@
 
 
                 <Button
+                    android:id="@+id/btnImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/red_600"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="16dp"
+                    android:text="Add Image"
+                    android:textStyle="bold"
+                    />
+
+                <Button
                     android:id="@+id/filter_price"
                     style="?android:textAppearanceSmall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:background="@color/blue"
+                    android:textColor="@color/white"
                     android:text="Finish"
                     android:textStyle="bold" />
 
