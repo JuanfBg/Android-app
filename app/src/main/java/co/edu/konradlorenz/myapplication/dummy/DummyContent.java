@@ -17,13 +17,25 @@ public class DummyContent {
      * An array of sample (dummy) items.
      */
     public static final List<DummyItem> ITEMS = new ArrayList<DummyItem>();
-
+    public static restaurant [] restaurantes = {
+            new restaurant("EL TALLER","El mejor restaurante de bomberos")
+            ,new restaurant("El FAUNO","el restaurante veneco que no da nada")
+            ,new restaurant("DICALU","buena comida mal ambiente")
+            ,new restaurant("KONRAD LORENZ","es caro muy mala calidad")
+            ,new restaurant("NOTARIA","buena comida no se")
+            ,new restaurant("La Fragata Giratorio","muy caro")
+            ,new restaurant("Céntrico","muy del centro")
+            ,new restaurant("La Puerta de Alcalá Bogotá","muy de la izquierda")
+            ,new restaurant("Restaurante Daniel","buena daniel")
+            ,new restaurant("La Provence de Andrei","andrie es re malo")
+            ,new restaurant("Nazca","el que valla el que le nazca")
+    };
     /**
      * A map of sample (dummy) items, by ID.
      */
     public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
-    private static final int COUNT = 25;
+    private static final int COUNT = 10;
 
     static {
         // Add some sample items.
@@ -38,7 +50,7 @@ public class DummyContent {
     }
 
     private static DummyItem createDummyItem(int position) {
-        return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
+        return new DummyItem(String.valueOf(position), restaurantes[position].name ,restaurantes[position].detail);
     }
 
     private static String makeDetails(int position) {
