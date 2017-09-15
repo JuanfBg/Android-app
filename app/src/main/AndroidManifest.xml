@@ -45,9 +45,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Presupuesto"
-            android:label="@string/title_activity_presupuesto" />
+
         <activity
             android:name=".AccountActivity"
             android:label="@string/title_activity_account"
