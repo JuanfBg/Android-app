@@ -46,6 +46,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MapsActivityRoute"
+            android:label="Ruta">
+        </activity>
+        <activity
             android:name=".Presupuesto"
             android:label="@string/title_activity_presupuesto" />
         <activity
@@ -56,6 +60,7 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".BudgetActivity" />
+
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_login"
