@@ -1,40 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
- xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rsb="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.edu.konradlorenz.myapplication.AddRestaurantActivity"
-    android:layout_margin="@dimen/text_margin">
+    android:clipToPadding="false">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
 
-    <FrameLayout
-        android:id="@+id/content"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="0dp">
 
-        <ScrollView
-            android:id="@+id/budget_scrollview"
-            android:layout_width="368dp"
-            android:layout_height="434dp"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="0dp">
 
-            <LinearLayout
-                android:id="@+id/email_login_form"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+
 
                 <android.support.design.widget.TextInputLayout
-                    android:layout_width="368dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16px"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="0dp">
+                  >
 
                     <ProgressBar
                         android:id="@+id/login_progress"
@@ -46,122 +30,112 @@
 
                     <EditText
                         android:id="@+id/valor1"
-                        android:layout_width="368dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="Restaurant name:"
+                        android:layout_marginTop="50dp"
                         android:inputType="text"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        tools:layout_editor_absoluteX="8dp"
-                        tools:layout_editor_absoluteY="0dp" />
+                       />
 
 
                 </android.support.design.widget.TextInputLayout>
 
 
                 <android.support.design.widget.TextInputLayout
-                    android:layout_width="368dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16px"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="0dp">
+                    >
 
                     <EditText
                         android:id="@+id/valor2"
-                        android:layout_width="368dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Restaurant adress:"
+                        android:hint="Restaurant address:"
+
+                        android:layout_marginTop="50dp"
                         android:inputType="text"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        tools:layout_editor_absoluteX="8dp"
-                        tools:layout_editor_absoluteY="0dp" />
+                        />
 
 
                 </android.support.design.widget.TextInputLayout>
 
 
                 <android.support.design.widget.TextInputLayout
-                    android:layout_width="368dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16px"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="0dp">
+                  >
 
                     <EditText
                         android:id="@+id/valor4"
-                        android:layout_width="368dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="Telephone:"
+                        android:layout_marginTop="50dp"
                         android:inputType="numberDecimal"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        tools:layout_editor_absoluteX="8dp"
-                        tools:layout_editor_absoluteY="0dp" />
+                        />
 
 
                 </android.support.design.widget.TextInputLayout>
 
 
                 <android.support.design.widget.TextInputLayout
-                    android:layout_width="368dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16px"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="0dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
 
                     <EditText
                         android:id="@+id/valor3"
-                        android:layout_width="368dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="Price:"
+                        android:layout_marginTop="50dp"
                         android:inputType="numberDecimal"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        tools:layout_editor_absoluteX="8dp"
-                        tools:layout_editor_absoluteY="0dp" />
+                        />
 
 
                 </android.support.design.widget.TextInputLayout>
 
 
-                <Button
-                    android:id="@+id/btnImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/red_600"
-                    android:text="Add Image"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+
+
+
+        <at.markushi.ui.CircleButton
+
+
+            android:id="@+id/btnImage"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1.19"
+            android:src="@drawable/ic_menu_camera"
+            rsb:cb_color="#b0120a"
+            android:layout_marginTop="30dp"
+            rsb:cb_pressedRingWidth="10dip"
+                />
+
+
+
 
                 <Button
                     android:id="@+id/filter_price"
                     style="?android:textAppearanceSmall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/blue"
-                    android:text="Finish"
+
+                    android:background="#ef6c00"
                     android:textColor="@color/white"
+                    android:layout_marginTop="30dp"
+                    android:text="Finish"
                     android:textStyle="bold" />
 
+
+
+
             </LinearLayout>
-
-        </ScrollView>
-    </FrameLayout>
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
-         />
 
 
 </LinearLayout>
