@@ -101,26 +101,20 @@
                 </android.support.design.widget.TextInputLayout>
 
 
-
-
-
         <at.markushi.ui.CircleButton
 
 
             android:id="@+id/btnImage"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="1.19"
             android:src="@drawable/ic_menu_camera"
             rsb:cb_color="#b0120a"
-            android:layout_marginTop="30dp"
-            rsb:cb_pressedRingWidth="10dip"
-                />
+            rsb:cb_pressedRingWidth="10dip" />
 
 
-
-
-                <Button
+        <Button
                     android:id="@+id/filter_price"
                     style="?android:textAppearanceSmall"
                     android:layout_width="match_parent"

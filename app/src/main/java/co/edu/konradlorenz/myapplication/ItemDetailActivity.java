@@ -31,10 +31,9 @@ public class ItemDetailActivity extends AppCompatActivity {
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Ruta al restaurante", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(ItemDetailActivity.this, MapsActivityRoute.class);
+                startActivity(intent);
             }
         });
 
