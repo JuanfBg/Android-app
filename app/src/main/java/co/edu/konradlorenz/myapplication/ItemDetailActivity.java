@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
-import co.edu.konradlorenz.myapplication.dummy.DummyContent;
+
 
 /**
  * An activity representing a list of Items. This activity
