@@ -1,19 +1,12 @@
-package co.edu.konradlorenz.myapplication;
+package co.edu.konradlorenz.myapplication.Activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -26,6 +19,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import co.edu.konradlorenz.myapplication.Fragments.BudgetFragment;
+import co.edu.konradlorenz.myapplication.Fragments.LoginFragment;
+import co.edu.konradlorenz.myapplication.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -47,7 +44,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 case R.id.navigation_sesion:
                //     mTextMessage.setText(R.string.title_sesion);
-                    Intent intent = new Intent(MapsActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(MapsActivity.this, LoginFragment.class);
                     startActivity(intent);
 
                     return true;
@@ -55,7 +52,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 case R.id.navigation_money:
                    // mTextMessage.setText(R.string.title_money);
 
-                    Intent intent2 = new Intent(MapsActivity.this, BudgetActivity.class);
+                    Intent intent2 = new Intent(MapsActivity.this, BudgetFragment.class);
                     startActivity(intent2);
 
                     return true;
