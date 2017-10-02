@@ -1,4 +1,4 @@
-package co.edu.konradlorenz.myapplication;
+package co.edu.konradlorenz.myapplication.Activities;
 import android.app.Activity;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import co.edu.konradlorenz.myapplication.R;
 import co.edu.konradlorenz.myapplication.dummy.DummyContent;
 /**
  * An activity representing a list of Items. This activity
