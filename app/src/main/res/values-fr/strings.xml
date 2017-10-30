@@ -8,31 +8,31 @@
     <string name="title_activity_login">Commencer la sesion</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">Correo</string>
-    <string name="prompt_value1">Precio Minimo</string>
-    <string name="prompt_value2">Precio Máximo</string>
+    <string name="prompt_email">Courrier électronique</string>
+    <string name="prompt_value1">Prix minimum</string>
+    <string name="prompt_value2">Prix maximum</string>
 
-    <string name="prompt_filter_price">Filtro</string>
+    <string name="prompt_filter_price">Filtrer</string>
 
-    <string name="prompt_password">Contraseña</string>
-    <string name="action_sign_in">Inicia sesión o registrate</string>
-    <string name="action_sign_in_short">Iniciar Sesión</string>
-    <string name="error_invalid_email">Este correo electrónico no es válido</string>
-    <string name="error_invalid_password">Esta contraseña es muy corta</string>
-    <string name="error_incorrect_password">Esta contraseña es incorrecta</string>
-    <string name="error_field_required">Este campo es requerido</string>
-    <string name="permission_rationale">Se requieren permisos de contactos para completar el correo electrónico.
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Connexion ou inscription</string>
+    <string name="action_sign_in_short">Commencer la sesion</string>
+    <string name="error_invalid_email">Cet e-mail no est pas valide</string>
+    <string name="error_invalid_password">Ce mot de passe est très court</string>
+    <string name="error_incorrect_password">Ce mot de passe est incorrect</string>
+    <string name="error_field_required">Ce champ est obligatoire</string>
+    <string name="permission_rationale">Les autorisations de contact sont requises pour compléter l e-mail.
     </string>
-    <string name="title_activity_presupuesto">Presupuesto</string>
-    <string name="title_activity_account">Actividad Cuenta</string>
+    <string name="title_activity_presupuesto">Devis</string>
+    <string name="title_activity_account">Compte</string>
 
-    <string name="navigation_drawer_open">Abriendo</string>
-    <string name="navigation_drawer_close">Cerrando</string>
+    <string name="navigation_drawer_open">Ouverture</string>
+    <string name="navigation_drawer_close">Clôture</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Paramètres</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Fragmento</string>
+    <string name="hello_blank_fragment">Fragment</string>
     <string name="title_activity_main2">Main2Activity</string>
-    <string name="title_item_detail">Detalles</string>
+    <string name="title_item_detail">Détails</string>
 </resources>
