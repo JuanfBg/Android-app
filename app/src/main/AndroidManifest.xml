@@ -37,7 +37,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=""
+            android:name=".Activities.MapsActivity"
             android:label="@string/title_activity_maps">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,25 +49,6 @@
 
         =======
 
-
-        <activity
-            android:name=".Activities.AccountActivity"
-            android:label="@string/title_activity_account"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
-            android:name=".Activities.ItemListActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Activities.ItemDetailActivity"
-            android:label="@string/title_item_detail"
-            android:parentActivityName=".Activities.ItemListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="co.edu.konradlorenz.myapplication.Activities.ItemListActivity" />
-        </activity>
 
     </application>
 
