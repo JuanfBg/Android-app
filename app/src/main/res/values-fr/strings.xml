@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Mes Restaurants</string>
+    <string name="title_activity_maps">Carte</string>
+    <string name="title_activity_main">Activité principale</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_sesion">Séance</string>
+    <string name="title_money">Devis</string>
+    <string name="title_activity_login">Commencer la sesion</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Correo</string>
+    <string name="prompt_value1">Precio Minimo</string>
+    <string name="prompt_value2">Precio Máximo</string>
+
+    <string name="prompt_filter_price">Filtro</string>
+
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Inicia sesión o registrate</string>
+    <string name="action_sign_in_short">Iniciar Sesión</string>
+    <string name="error_invalid_email">Este correo electrónico no es válido</string>
+    <string name="error_invalid_password">Esta contraseña es muy corta</string>
+    <string name="error_incorrect_password">Esta contraseña es incorrecta</string>
+    <string name="error_field_required">Este campo es requerido</string>
+    <string name="permission_rationale">Se requieren permisos de contactos para completar el correo electrónico.
+    </string>
+    <string name="title_activity_presupuesto">Presupuesto</string>
+    <string name="title_activity_account">Actividad Cuenta</string>
+
+    <string name="navigation_drawer_open">Abriendo</string>
+    <string name="navigation_drawer_close">Cerrando</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Fragmento</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_item_detail">Detalles</string>
+</resources>
