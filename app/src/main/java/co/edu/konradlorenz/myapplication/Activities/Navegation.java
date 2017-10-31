@@ -54,7 +54,7 @@ public class Navegation extends AppCompatActivity
         manager.beginTransaction().replace(R.id.content2,new MapsRouteFragment()).commit();
 
 
-       
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
