@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="co.edu.konradlorenz.myapplication.MainActivity">
+    tools:context="co.edu.konradlorenz.myapplication.Activities.MapsActivity">
 
     <FrameLayout
         android:id="@+id/content"
@@ -14,14 +14,18 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <fragment
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
+
+
+
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context="co.edu.konradlorenz.myapplication.Activities.MapsActivity" />
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
 
+
+
+        </android.support.design.widget.AppBarLayout>
 
 
         <android.support.design.widget.FloatingActionButton
@@ -36,20 +40,8 @@
             app:layout_anchorGravity="top|end" />
 
 
-        <android.support.design.widget.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
-
-
-
-
-        </android.support.design.widget.AppBarLayout>
-
-
-
-
     </FrameLayout>
+
 
 
 

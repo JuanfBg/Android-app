@@ -1,6 +1,7 @@
 package co.edu.konradlorenz.myapplication.Activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 
@@ -8,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,7 +26,7 @@ import co.edu.konradlorenz.myapplication.Fragments.BudgetFragment;
 import co.edu.konradlorenz.myapplication.Fragments.LoginFragment;
 import co.edu.konradlorenz.myapplication.R;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,LoginFragment.OnFragmentInteractionListener,BudgetFragment.OnFragmentInteractionListener {
 
     private GoogleMap mMap;
 
@@ -44,16 +46,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 case R.id.navigation_sesion:
                //     mTextMessage.setText(R.string.title_sesion);
-                    Intent intent = new Intent(MapsActivity.this, LoginFragment.class);
-                    startActivity(intent);
+
+                    FragmentManager manager = getSupportFragmentManager();
+                    manager.beginTransaction().replace(R.id.content,new LoginFragment()).commit();
+
 
                     return true;
 
                 case R.id.navigation_money:
                    // mTextMessage.setText(R.string.title_money);
-
-                    Intent intent2 = new Intent(MapsActivity.this, BudgetFragment.class);
-                    startActivity(intent2);
+                    FragmentManager manager2 = getSupportFragmentManager();
+                    manager2.beginTransaction().replace(R.id.content,new BudgetFragment()).commit();
 
                     return true;
             }
@@ -72,20 +75,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
 
 
-        FloatingActionButton button = (FloatingActionButton) findViewById(R.id.fab_add_restaurant);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MapsActivity.this, ItemListActivity.class);
-                startActivity(intent);
-            }
-        });
+
         
     }
 
@@ -113,4 +106,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }
