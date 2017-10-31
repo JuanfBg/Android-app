@@ -4,20 +4,12 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import co.edu.konradlorenz.myapplication.R;
 import co.edu.konradlorenz.myapplication.Entities.restaurant;
@@ -25,12 +17,13 @@ import co.edu.konradlorenz.myapplication.Entities.restaurant;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link AddRestaurantFragment.OnFragmentInteractionListener} interface
+ * {@link restaurantList.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link AddRestaurantFragment#newInstance} factory method to
+ * Use the {@link restaurantList#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddRestaurantFragment extends Fragment {
+public class restaurantList extends Fragment {
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -42,7 +35,7 @@ public class AddRestaurantFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public AddRestaurantFragment() {
+    public restaurantList() {
         // Required empty public constructor
     }
 
@@ -52,12 +45,13 @@ public class AddRestaurantFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AddRestaurantFragment.
+     * @return A new instance of fragment LoginFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AddRestaurantFragment newInstance(String param1, String param2) {
-        AddRestaurantFragment fragment = new AddRestaurantFragment();
+    public static restaurantList newInstance(String param1, String param2) {
+        restaurantList fragment = new restaurantList();
         Bundle args = new Bundle();
+        Log.i("prueba","entró");
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
@@ -67,52 +61,24 @@ public class AddRestaurantFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
-
-
-
-
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        super.onCreate(savedInstanceState);
+
+
+        final ListView listView = (ListView) getView().findViewById(R.id.listView);
+
+        ;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference("restaurantes");
-
-        View rootView = inflater.inflate(R.layout.activity_add_restaurant, container, false);
-        final EditText no = rootView.findViewById(R.id.valor1);
-        final EditText di = rootView.findViewById(R.id.valor2);
-        final EditText tel =  rootView.findViewById(R.id.valor3);
-        final EditText price =  rootView.findViewById(R.id.valor4);
-        final Button button =  rootView.findViewById(R.id.filter_price);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                String nom=no.getText().toString();
-                String dire =di.getText().toString();
-                int pri = Integer.parseInt(price.getText().toString());
-                int tele = Integer.parseInt(tel.getText().toString());
-                restaurant res = new restaurant(nom,dire,pri,tele);
-                DatabaseReference childRef = myRef.push();
-
-                // Set the child's data to the value passed in from the text box.
-                childRef.setValue(res);
-
-            }
-        });
-
+        View rootView = inflater.inflate(R.layout.reastaurant_list, container, false);
+        Log.i("prueba","entró");
         return rootView;
-
     }
 
     // TODO: Rename method, update argument and hook method into UI event
