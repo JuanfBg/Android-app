@@ -1,4 +1,4 @@
-package co.edu.konradlorenz.myapplication.entities;
+package co.edu.konradlorenz.myapplication.Entities;
 
 /**
  * Created by Kevin on 25/09/2017.

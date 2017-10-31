@@ -13,8 +13,10 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -39,16 +41,18 @@
         <activity
             android:name=".Activities.MapsActivity"
             android:label="@string/title_activity_maps">
+
+        </activity>
+        <activity
+            android:name=".Activities.Navegation"
+            android:label="@string/title_activity_navegation"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-
     </application>
 
 </manifest>

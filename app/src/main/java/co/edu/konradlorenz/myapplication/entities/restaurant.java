@@ -1,15 +1,16 @@
-package co.edu.konradlorenz.myapplication.entities;
-
-import java.util.ArrayList;
+package co.edu.konradlorenz.myapplication.Entities;
 
 public class restaurant {
     String Name;
-    String Information;
-    int AveragePrice;
-    ArrayList<commentary> comments;
     String address;
-    double latitud;
-    double longitud;
-    
+    int AveragePrice;
+    int telephone;
+
+    public restaurant(String name,  String address, int averagePrice,int phone) {
+        Name = name;
+        AveragePrice = averagePrice;
+        this.address = address;
+        this.telephone = phone;
+    }
 }
 

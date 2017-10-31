@@ -22,11 +22,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import co.edu.konradlorenz.myapplication.Fragments.AddRestaurantFragment;
 import co.edu.konradlorenz.myapplication.Fragments.BudgetFragment;
 import co.edu.konradlorenz.myapplication.Fragments.LoginFragment;
 import co.edu.konradlorenz.myapplication.R;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,LoginFragment.OnFragmentInteractionListener,BudgetFragment.OnFragmentInteractionListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LoginFragment.OnFragmentInteractionListener ,BudgetFragment.OnFragmentInteractionListener {
 
     private GoogleMap mMap;
 
@@ -48,7 +49,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                //     mTextMessage.setText(R.string.title_sesion);
 
                     FragmentManager manager = getSupportFragmentManager();
-                    manager.beginTransaction().replace(R.id.content,new LoginFragment()).commit();
+                    manager.beginTransaction().replace(R.id.content,new AddRestaurantFragment()).commit();
 
 
                     return true;
