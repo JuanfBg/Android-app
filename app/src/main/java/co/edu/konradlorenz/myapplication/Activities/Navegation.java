@@ -2,6 +2,8 @@ package co.edu.konradlorenz.myapplication.Activities;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
@@ -26,6 +28,7 @@ import co.edu.konradlorenz.myapplication.Fragments.AddRestaurantFragment;
 import co.edu.konradlorenz.myapplication.Fragments.BudgetFragment;
 import co.edu.konradlorenz.myapplication.Fragments.LoginFragment;
 import co.edu.konradlorenz.myapplication.Fragments.MapsRouteFragment;
+import co.edu.konradlorenz.myapplication.Fragments.restaurantList;
 import co.edu.konradlorenz.myapplication.R;
 
 
@@ -38,11 +41,44 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Navegation extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener ,OnMapReadyCallback,AddRestaurantFragment.OnFragmentInteractionListener , MapsRouteFragment.OnFragmentInteractionListener, LoginFragment.OnFragmentInteractionListener ,BudgetFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,restaurantList.OnFragmentInteractionListener,AddRestaurantFragment.OnFragmentInteractionListener , MapsRouteFragment.OnFragmentInteractionListener, LoginFragment.OnFragmentInteractionListener ,BudgetFragment.OnFragmentInteractionListener {
     private GoogleMap mMap;
 
     private TextView mTextMessage;
-    @Override
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+
+
+                    return true;
+
+                case R.id.navigation_sesion:
+                    //     mTextMessage.setText(R.string.title_sesion);
+
+                    FragmentManager manager = getSupportFragmentManager();
+                    manager.beginTransaction().replace(R.id.content2, new LoginFragment()).commit();
+
+
+                    return true;
+
+                case R.id.navigation_money:
+                    // mTextMessage.setText(R.string.title_money);
+                    FragmentManager manager2 = getSupportFragmentManager();
+                    manager2.beginTransaction().replace(R.id.content2, new BudgetFragment()).commit();
+
+                    return true;
+            }
+            return false;
+        }
+    };
+
+
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navegation);
@@ -64,6 +100,9 @@ public class Navegation extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
     }
 
     @Override
@@ -111,6 +150,8 @@ public class Navegation extends AppCompatActivity
             manager.beginTransaction().replace(R.id.content2,new AddRestaurantFragment()).commit();
 
         } else if (id == R.id.nav_slideshow) {
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content2,new restaurantList()).commit();
 
         } else if (id == R.id.nav_manage) {
 
@@ -130,14 +171,5 @@ public class Navegation extends AppCompatActivity
 
     }
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(4.65,-74.10);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,15));
-    }
 }

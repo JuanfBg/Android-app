@@ -11,6 +11,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import co.edu.konradlorenz.myapplication.R;
 import co.edu.konradlorenz.myapplication.Entities.restaurant;
 
@@ -68,8 +74,6 @@ public class restaurantList extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-        final ListView listView = (ListView) getView().findViewById(R.id.listView);
-
         ;
     }
 
@@ -77,7 +81,49 @@ public class restaurantList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.reastaurant_list, container, false);
-        Log.i("prueba","entró");
+        Log.i("prueba", "entró");
+
+
+        final ListView listView = rootView.findViewById(R.id.listView);
+
+        // Create a new Adapter
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
+                android.R.layout.simple_list_item_1, android.R.id.text1);
+
+        // Assign adapter to ListView
+        listView.setAdapter(adapter);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("restaurantes");
+
+        myRef.addChildEventListener(new ChildEventListener(){
+
+            // This function is called once for each child that exists
+            // when the listener is added. Then it is called
+            // each time a new child is added.
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
+                restaurant value = dataSnapshot.getValue(restaurant.class);
+
+                adapter.add(value.getName());
+            }
+
+            // This function is called each time a child item is removed.
+            public void onChildRemoved(DataSnapshot dataSnapshot){
+                restaurant value = dataSnapshot.getValue(restaurant.class);
+                adapter.remove(value.getName());
+            }
+
+            // The following functions are also required in ChildEventListener implementations.
+            public void onChildChanged(DataSnapshot dataSnapshot, String previousChildName){}
+            public void onChildMoved(DataSnapshot dataSnapshot, String previousChildName){}
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("TAG:", "Failed to read value.", error.toException());
+            }
+        });
+
         return rootView;
     }
 
