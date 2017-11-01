@@ -3,7 +3,9 @@ package co.edu.konradlorenz.myapplication.Fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +13,11 @@ import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -35,6 +41,8 @@ public class MapsRouteFragment extends Fragment implements OnMapReadyCallback {
     private String mParam1;
     private String mParam2;
     private GoogleMap mMap;
+    MapView mMapView;
+    View rootView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -72,9 +80,24 @@ public class MapsRouteFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.activity_maps_route, container, false);
+        rootView = inflater.inflate(R.layout.activity_maps_route, container, false);
         return rootView;
     }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+         mMapView=rootView.findViewById(R.id.map);
+        if(mMapView !=null){
+            mMapView.onCreate(null);
+            mMapView.onResume();
+            mMapView.getMapAsync(this);
+
+
+        }
+
+
+                    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -100,10 +123,13 @@ public class MapsRouteFragment extends Fragment implements OnMapReadyCallback {
         mListener = null;
     }
 
-
+    @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
+        MapsInitializer.initialize(getContext());
+
+        Log.i("MAPS","Ingresa");
+        mMap = googleMap;
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(4.65,-74.10);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
