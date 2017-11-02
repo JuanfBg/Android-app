@@ -131,10 +131,14 @@ public class MapsRouteFragment extends Fragment implements OnMapReadyCallback {
         Log.i("MAPS","Ingresa");
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(4.65,-74.10);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(4.6482667,-74.0612917);
+        mMap.addMarker(new MarkerOptions().position(sydney).title(" la Konra lore"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(4.648551, -74.062492)).title("El taller"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(4.646597, -74.062993)).title("El fauno"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(4.648091, -74.061786)).title("changuiz"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(4.648572, -74.063235)).title("Dicalú"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,15));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,20));
 
     }
 

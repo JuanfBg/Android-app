@@ -101,6 +101,37 @@ public class Navegation extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+            BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+            bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    switch (item.getItemId()) {
+                        case R.id.navigation_home:
+
+                            FragmentManager manager3 = getSupportFragmentManager();
+                            manager3.beginTransaction().replace(R.id.content2, new MapsRouteFragment()).commit();
+
+                            break;
+
+                        case R.id.navigation_sesion:
+                            //     mTextMessage.setText(R.string.title_sesion);
+
+                            FragmentManager manager = getSupportFragmentManager();
+                            manager.beginTransaction().replace(R.id.content2, new LoginFragment()).commit();
+
+
+                            break;
+
+                        case R.id.navigation_money:
+                            // mTextMessage.setText(R.string.title_money);
+                            FragmentManager manager2 = getSupportFragmentManager();
+                            manager2.beginTransaction().replace(R.id.content2, new BudgetFragment()).commit();
+
+                            break;
+                    }
+                    return true;
+                }
+        });
 
 
     }
