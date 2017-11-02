@@ -103,6 +103,7 @@ public class AddRestaurantFragment extends Fragment {
 
                 // Set the child's data to the value passed in from the text box.
                 childRef.setValue(res);
+
                 Snackbar.make(rootView, "Se ha Agregado el restaurante", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 

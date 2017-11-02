@@ -117,11 +117,10 @@
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="-80dp"
             android:background="#ef6c00"
-            android:text="Search"
+            android:text="Buscar"
             android:textColor="@android:color/white" />
-
 
 
     </LinearLayout>
