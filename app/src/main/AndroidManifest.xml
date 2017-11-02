@@ -40,7 +40,7 @@
 
         <activity
             android:name=".Activities.Navegation"
-            android:label="@string/title_activity_navegation"
+            android:label="restaurant aplication"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

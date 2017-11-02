@@ -3,19 +3,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_perfil"
             android:icon="@drawable/ic_person_black_24dp"
             android:title="Perfil" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_res"
             android:icon="@drawable/ic_restaurant_menu_black_24dp"
             android:title="Mis restauranes" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_search_black_24dp"
-            android:title="Filtro" />
+            android:id="@+id/nav_add_res"
+            android:icon="@drawable/ic_add_black_24dp"
+            android:title="Agregar Restaurante" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_ajust"
             android:icon="@drawable/ic_menu_manage"
             android:title="Ajustes" />
     </group>

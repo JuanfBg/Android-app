@@ -4,10 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -18,64 +15,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import co.edu.konradlorenz.myapplication.Fragments.AddRestaurantFragment;
 import co.edu.konradlorenz.myapplication.Fragments.BudgetFragment;
+import co.edu.konradlorenz.myapplication.Fragments.CommentFragment;
 import co.edu.konradlorenz.myapplication.Fragments.LoginFragment;
 import co.edu.konradlorenz.myapplication.Fragments.MapsRouteFragment;
-import co.edu.konradlorenz.myapplication.Fragments.restaurantList;
+import co.edu.konradlorenz.myapplication.Fragments.PerfilFragment;
+import co.edu.konradlorenz.myapplication.Fragments.RestaurantList;
 import co.edu.konradlorenz.myapplication.R;
 
-
-
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-
 public class Navegation extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,restaurantList.OnFragmentInteractionListener,AddRestaurantFragment.OnFragmentInteractionListener , MapsRouteFragment.OnFragmentInteractionListener, LoginFragment.OnFragmentInteractionListener ,BudgetFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,CommentFragment.OnFragmentInteractionListener,PerfilFragment.OnFragmentInteractionListener,RestaurantList.OnFragmentInteractionListener,AddRestaurantFragment.OnFragmentInteractionListener , MapsRouteFragment.OnFragmentInteractionListener, LoginFragment.OnFragmentInteractionListener ,BudgetFragment.OnFragmentInteractionListener {
     private GoogleMap mMap;
 
     private TextView mTextMessage;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-
-
-                    return true;
-
-                case R.id.navigation_sesion:
-                    //     mTextMessage.setText(R.string.title_sesion);
-
-                    FragmentManager manager = getSupportFragmentManager();
-                    manager.beginTransaction().replace(R.id.content2, new LoginFragment()).commit();
-
-
-                    return true;
-
-                case R.id.navigation_money:
-                    // mTextMessage.setText(R.string.title_money);
-                    FragmentManager manager2 = getSupportFragmentManager();
-                    manager2.beginTransaction().replace(R.id.content2, new BudgetFragment()).commit();
-
-                    return true;
-            }
-            return false;
-        }
-    };
 
 
         @Override
@@ -85,9 +41,10 @@ public class Navegation extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.content2,new MapsRouteFragment()).commit();
+         getSupportFragmentManager().beginTransaction()
+                .replace(R.id.content2,new MapsRouteFragment(),"Maps")
+                .addToBackStack("Maps")
+                .commit();
 
 
 
@@ -109,7 +66,7 @@ public class Navegation extends AppCompatActivity
                         case R.id.navigation_home:
 
                             FragmentManager manager3 = getSupportFragmentManager();
-                            manager3.beginTransaction().replace(R.id.content2, new MapsRouteFragment()).commit();
+                            manager3.beginTransaction().replace(R.id.content2, new MapsRouteFragment()).addToBackStack("").commit();;
 
                             break;
 
@@ -117,7 +74,7 @@ public class Navegation extends AppCompatActivity
                             //     mTextMessage.setText(R.string.title_sesion);
 
                             FragmentManager manager = getSupportFragmentManager();
-                            manager.beginTransaction().replace(R.id.content2, new LoginFragment()).commit();
+                            manager.beginTransaction().replace(R.id.content2, new LoginFragment()).addToBackStack("").commit();;
 
 
                             break;
@@ -125,7 +82,7 @@ public class Navegation extends AppCompatActivity
                         case R.id.navigation_money:
                             // mTextMessage.setText(R.string.title_money);
                             FragmentManager manager2 = getSupportFragmentManager();
-                            manager2.beginTransaction().replace(R.id.content2, new BudgetFragment()).commit();
+                            manager2.beginTransaction().replace(R.id.content2, new BudgetFragment()).addToBackStack("").commit();;
 
                             break;
                     }
@@ -173,22 +130,29 @@ public class Navegation extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_perfil) {
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content2, new PerfilFragment()).addToBackStack("").commit();
+
+        } else if (id == R.id.nav_res) {
 
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.content2,new AddRestaurantFragment()).commit();
+            manager.beginTransaction().replace(R.id.content2,new RestaurantList()).addToBackStack("").commit();;
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_add_res) {
+
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.content2,new restaurantList()).commit();
+            manager.beginTransaction().replace(R.id.content2,new AddRestaurantFragment()).addToBackStack("").commit();
 
-        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.nav_ajust) {
 
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
+
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content2,new CommentFragment()).commit();
 
         }
 

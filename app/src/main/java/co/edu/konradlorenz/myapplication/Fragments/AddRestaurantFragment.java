@@ -9,18 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import co.edu.konradlorenz.myapplication.R;
-import co.edu.konradlorenz.myapplication.Entities.restaurant;
+import co.edu.konradlorenz.myapplication.Entities.Restaurant;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -98,11 +92,11 @@ public class AddRestaurantFragment extends Fragment {
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String nom=no.getText().toString();
-                String dire =di.getText().toString();
-                int pri = Integer.parseInt(price.getText().toString());
-                int tele = Integer.parseInt(tel.getText().toString());
-                restaurant res = new restaurant(nom,dire,pri,tele);
+                String nom= no.getText().toString();
+                String dire = di.getText().toString();
+                long pri = Integer.parseInt(price.getText().toString());
+                long tele = Integer.parseInt(tel.getText().toString());
+                Restaurant res = new Restaurant(nom,dire,pri,tele);
                 DatabaseReference childRef = myRef.push();
 
                 // Set the child's data to the value passed in from the text box.

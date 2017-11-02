@@ -1,24 +1,28 @@
 package co.edu.konradlorenz.myapplication.Entities;
 
-public class restaurant {
-    String Name;
+public class Restaurant {
+    String name;
     String address;
-    int AveragePrice;
-    int telephone;
+    long averagePrice;
+    long telephone;
 
-    public restaurant(String name,  String address, int averagePrice,int phone) {
-        Name = name;
-        AveragePrice = averagePrice;
+    public Restaurant() {
+
+    }
+
+    public Restaurant(String name, String address, long averagePrice, long telephone) {
+        this.name = name;
         this.address = address;
-        this.telephone = phone;
+        this.averagePrice = averagePrice;
+        this.telephone = telephone;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getAddress() {
@@ -29,19 +33,19 @@ public class restaurant {
         this.address = address;
     }
 
-    public int getAveragePrice() {
-        return AveragePrice;
+    public long getAveragePrice() {
+        return averagePrice;
     }
 
-    public void setAveragePrice(int averagePrice) {
-        AveragePrice = averagePrice;
+    public void setAveragePrice(long averagePrice) {
+        this.averagePrice = averagePrice;
     }
 
-    public int getTelephone() {
+    public long getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(long telephone) {
         this.telephone = telephone;
     }
 }

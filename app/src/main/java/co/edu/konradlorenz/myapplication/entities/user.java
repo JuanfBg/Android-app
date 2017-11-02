@@ -5,4 +5,5 @@ package co.edu.konradlorenz.myapplication.Entities;
  */
 
 public class user {
+
 }
