@@ -3,6 +3,7 @@ package co.edu.konradlorenz.myapplication.Fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import org.florescu.android.rangeseekbar.RangeSeekBar;
 
 import co.edu.konradlorenz.myapplication.R;
 import co.edu.konradlorenz.myapplication.Entities.Commentary;
@@ -83,11 +86,12 @@ public class CommentFragment extends Fragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference("Comentarios");
 
-        View rootView = inflater.inflate(R.layout.comment, container, false);
+        final View rootView = inflater.inflate(R.layout.comment, container, false);
 
         final EditText no = rootView.findViewById(R.id.com_Nombre);
         final EditText di = rootView.findViewById(R.id.com_comentary);
         final Button button =  rootView.findViewById(R.id.filter_price);
+        final RangeSeekBar bar = rootView.findViewById(R.id.rangeSeekBar);
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -98,6 +102,9 @@ public class CommentFragment extends Fragment {
 
                 // Set the child's data to the value passed in from the text box.
                 childRef.setValue(res);
+
+                Snackbar.make(rootView, "Se ha enviado el comentario de la aplicación", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
 
             }
         });

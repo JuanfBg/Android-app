@@ -23,11 +23,12 @@ import co.edu.konradlorenz.myapplication.Fragments.CommentFragment;
 import co.edu.konradlorenz.myapplication.Fragments.LoginFragment;
 import co.edu.konradlorenz.myapplication.Fragments.MapsRouteFragment;
 import co.edu.konradlorenz.myapplication.Fragments.PerfilFragment;
+import co.edu.konradlorenz.myapplication.Fragments.RegisterFragment;
 import co.edu.konradlorenz.myapplication.Fragments.RestaurantList;
 import co.edu.konradlorenz.myapplication.R;
 
 public class Navegation extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,CommentFragment.OnFragmentInteractionListener,PerfilFragment.OnFragmentInteractionListener,RestaurantList.OnFragmentInteractionListener,AddRestaurantFragment.OnFragmentInteractionListener , MapsRouteFragment.OnFragmentInteractionListener, LoginFragment.OnFragmentInteractionListener ,BudgetFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,RegisterFragment.OnFragmentInteractionListener,CommentFragment.OnFragmentInteractionListener,PerfilFragment.OnFragmentInteractionListener,RestaurantList.OnFragmentInteractionListener,AddRestaurantFragment.OnFragmentInteractionListener , MapsRouteFragment.OnFragmentInteractionListener, LoginFragment.OnFragmentInteractionListener ,BudgetFragment.OnFragmentInteractionListener {
     private GoogleMap mMap;
 
     private TextView mTextMessage;
@@ -66,7 +67,7 @@ public class Navegation extends AppCompatActivity
                         case R.id.navigation_home:
 
                             FragmentManager manager3 = getSupportFragmentManager();
-                            manager3.beginTransaction().replace(R.id.content2, new MapsRouteFragment()).addToBackStack("").commit();;
+                            manager3.beginTransaction().replace(R.id.content2, new MapsRouteFragment(),"Maps").addToBackStack("Maps").commit();;
 
                             break;
 
@@ -74,7 +75,7 @@ public class Navegation extends AppCompatActivity
                             //     mTextMessage.setText(R.string.title_sesion);
 
                             FragmentManager manager = getSupportFragmentManager();
-                            manager.beginTransaction().replace(R.id.content2, new LoginFragment()).addToBackStack("").commit();;
+                            manager.beginTransaction().replace(R.id.content2, new LoginFragment(),"Maps").addToBackStack("Maps").commit();
 
 
                             break;
@@ -82,7 +83,7 @@ public class Navegation extends AppCompatActivity
                         case R.id.navigation_money:
                             // mTextMessage.setText(R.string.title_money);
                             FragmentManager manager2 = getSupportFragmentManager();
-                            manager2.beginTransaction().replace(R.id.content2, new BudgetFragment()).addToBackStack("").commit();;
+                            manager2.beginTransaction().replace(R.id.content2, new BudgetFragment(),"Maps").addToBackStack("Maps").commit();
 
                             break;
                     }
@@ -132,17 +133,17 @@ public class Navegation extends AppCompatActivity
 
         if (id == R.id.nav_perfil) {
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.content2, new PerfilFragment()).addToBackStack("").commit();
+            manager.beginTransaction().replace(R.id.content2, new PerfilFragment(),"Maps").addToBackStack("Maps").commit();
 
         } else if (id == R.id.nav_res) {
 
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.content2,new RestaurantList()).addToBackStack("").commit();;
+            manager.beginTransaction().replace(R.id.content2,new RestaurantList(),"Maps").addToBackStack("Maps").commit();
 
         } else if (id == R.id.nav_add_res) {
 
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.content2,new AddRestaurantFragment()).addToBackStack("").commit();
+            manager.beginTransaction().replace(R.id.content2,new AddRestaurantFragment(),"Maps").addToBackStack("Maps").commit();
 
 
         } else if (id == R.id.nav_ajust) {
@@ -152,7 +153,7 @@ public class Navegation extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.content2,new CommentFragment()).commit();
+            manager.beginTransaction().replace(R.id.content2,new CommentFragment(),"Maps").addToBackStack("Maps").commit();
 
         }
 
