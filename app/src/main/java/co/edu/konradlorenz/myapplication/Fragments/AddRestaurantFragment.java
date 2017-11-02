@@ -3,7 +3,9 @@ package co.edu.konradlorenz.myapplication.Fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,7 +85,7 @@ public class AddRestaurantFragment extends Fragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference("restaurantes");
 
-        View rootView = inflater.inflate(R.layout.activity_add_restaurant, container, false);
+        final View rootView = inflater.inflate(R.layout.activity_add_restaurant, container, false);
         final EditText no = rootView.findViewById(R.id.valor1);
         final EditText di = rootView.findViewById(R.id.valor2);
         final EditText tel =  rootView.findViewById(R.id.valor3);
@@ -101,6 +103,11 @@ public class AddRestaurantFragment extends Fragment {
 
                 // Set the child's data to the value passed in from the text box.
                 childRef.setValue(res);
+                Snackbar.make(rootView, "Se ha Agregado el restaurante", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+
+
 
             }
         });
