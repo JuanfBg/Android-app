@@ -27,6 +27,7 @@
 
 
     <EditText
+        android:id="@+id/email_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -37,11 +38,11 @@
         android:hint="Email"
         android:padding="10dp"
         android:textColor="@android:color/black"
-        android:textColorHint="@android:color/white" />
+        android:textColorHint="@android:color/black" />
 
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/pass_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:imeActionId="@+id/login"
@@ -54,7 +55,7 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:textColor="@android:color/black"
-        android:textColorHint="@android:color/white" />
+        android:textColorHint="@android:color/black" />
 
         <Button
             android:id="@+id/sign_up_button"

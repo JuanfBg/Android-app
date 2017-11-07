@@ -3,12 +3,17 @@ package co.edu.konradlorenz.myapplication.Fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import co.edu.konradlorenz.myapplication.R;
 
@@ -20,16 +25,12 @@ import co.edu.konradlorenz.myapplication.R;
  * Use the {@link LoginFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LoginFragment extends Fragment {
+public class LoginFragment extends Fragment implements View.OnClickListener {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    Button sign_in_button;
+    EditText editTextEmail, editTextPassword;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -38,11 +39,7 @@ public class LoginFragment extends Fragment {
     }
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+
      * @return A new instance of fragment LoginFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -50,26 +47,42 @@ public class LoginFragment extends Fragment {
         LoginFragment fragment = new LoginFragment();
         Bundle args = new Bundle();
         Log.i("prueba","entró");
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+        sign_in_button=getActivity().findViewById(R.id.sign_in_button);
+        editTextEmail=getActivity().findViewById(R.id.email_register);
+        editTextPassword=getActivity().findViewById(R.id.pass_register);
+
+        sign_in_button.OnClickListener(this);
+    }
+    private void signIn(String email, String password){
+
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password);
+    }
+
+    public void onClick(View view, View.OnClickListener){
+
+        switch (view.getId()){
+            case R.id.sign_in_button:
+                String email=editTextEmail.getText().toString();
+
+                String password=editTextPassword.getText().toString();
+                signIn(email,password);
         }
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_login, container, false);
-        Log.i("prueba","entró");
+
         final TextView regText = (TextView) rootView.findViewById(R.id.reg_text);
         regText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +90,7 @@ public class LoginFragment extends Fragment {
                 getFragmentManager().beginTransaction().replace(R.id.content2,new RegisterFragment(),"Maps")
                         .addToBackStack("Maps")
                         .commit();
+
             }
         });
 
@@ -88,6 +102,7 @@ public class LoginFragment extends Fragment {
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
+
         }
     }
 
