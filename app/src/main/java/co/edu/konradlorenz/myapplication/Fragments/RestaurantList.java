@@ -19,7 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import co.edu.konradlorenz.myapplication.R;
-import co.edu.konradlorenz.myapplication.Entities.Restaurant;
+import co.edu.konradlorenz.myapplication.entities.restaurant;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -111,14 +112,14 @@ public class RestaurantList extends Fragment {
             // each time a new child is added.
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
-                Restaurant value = dataSnapshot.getValue(Restaurant.class);
+                restaurant value = dataSnapshot.getValue(restaurant.class);
 
                 adapter.add(value.getName());
             }
 
             // This function is called each time a child item is removed.
             public void onChildRemoved(DataSnapshot dataSnapshot){
-                Restaurant value = dataSnapshot.getValue(Restaurant.class);
+                restaurant value = dataSnapshot.getValue(restaurant.class);
                 adapter.remove(value.getName());
             }
 

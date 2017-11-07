@@ -1,8 +1,10 @@
 package co.edu.konradlorenz.myapplication.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,8 +17,10 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import at.markushi.ui.CircleButton;
 import co.edu.konradlorenz.myapplication.R;
-import co.edu.konradlorenz.myapplication.Entities.Restaurant;
+
+import co.edu.konradlorenz.myapplication.entities.restaurant;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -64,18 +68,18 @@ public class AddRestaurantFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        CircleButton photo;
+        photo = getActivity().findViewById(R.id.btnImage);
 
-
-
-
-
-
-
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivity(takePictureIntent);
+            }
+        });
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -98,7 +102,7 @@ public class AddRestaurantFragment extends Fragment {
                 String dire = di.getText().toString();
                 long pri = Integer.parseInt(price.getText().toString());
                 long tele = Integer.parseInt(tel.getText().toString());
-                Restaurant res = new Restaurant(nom,dire,pri,tele);
+                restaurant res = new restaurant(nom,dire,pri,tele);
                 DatabaseReference childRef = myRef.push();
 
                 // Set the child's data to the value passed in from the text box.

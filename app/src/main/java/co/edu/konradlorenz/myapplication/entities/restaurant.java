@@ -1,16 +1,16 @@
-package co.edu.konradlorenz.myapplication.Entities;
+package co.edu.konradlorenz.myapplication.entities;
 
-public class Restaurant {
+public class restaurant {
     String name;
     String address;
     long averagePrice;
     long telephone;
 
-    public Restaurant() {
+    public restaurant() {
 
     }
 
-    public Restaurant(String name, String address, long averagePrice, long telephone) {
+    public restaurant(String name, String address, long averagePrice, long telephone) {
         this.name = name;
         this.address = address;
         this.averagePrice = averagePrice;

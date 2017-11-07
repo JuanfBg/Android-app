@@ -77,7 +77,7 @@ public class RegisterFragment extends Fragment {
 
 
 
-        final View rootView = inflater.inflate(R.layout.activity_add_user, container, false);
+        final View rootView = inflater.inflate(R.layout.activity_signup, container, false);
 
         return rootView;
 

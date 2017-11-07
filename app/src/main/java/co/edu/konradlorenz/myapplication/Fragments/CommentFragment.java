@@ -17,7 +17,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import org.florescu.android.rangeseekbar.RangeSeekBar;
 
 import co.edu.konradlorenz.myapplication.R;
-import co.edu.konradlorenz.myapplication.Entities.Commentary;
+
+import co.edu.konradlorenz.myapplication.entities.commentary;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -97,7 +98,7 @@ public class CommentFragment extends Fragment {
             public void onClick(View v) {
                 String nom=no.getText().toString();
                 String dire =di.getText().toString();
-                Commentary res = new Commentary(nom,dire);
+                commentary res = new commentary(nom,dire);
                 DatabaseReference childRef = myRef.push();
 
                 // Set the child's data to the value passed in from the text box.

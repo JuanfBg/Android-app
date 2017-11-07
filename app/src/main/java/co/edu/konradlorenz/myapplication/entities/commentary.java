@@ -1,19 +1,19 @@
-package co.edu.konradlorenz.myapplication.Entities;
+package co.edu.konradlorenz.myapplication.entities;
 
 /**
  * Created by Kevin on 25/09/2017.
  */
 
-public class Commentary {
+public class commentary {
     String commentary;
     String user;
 
-    public Commentary(String commentary, String user) {
+    public commentary(String commentary, String user) {
         this.commentary = commentary;
         this.user = user;
     }
 
-    public Commentary() {
+    public commentary() {
     }
 
     public String getCommentary() {

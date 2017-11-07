@@ -29,9 +29,9 @@ import co.edu.konradlorenz.myapplication.R;
 
 public class Navegation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,RegisterFragment.OnFragmentInteractionListener,CommentFragment.OnFragmentInteractionListener,PerfilFragment.OnFragmentInteractionListener,RestaurantList.OnFragmentInteractionListener,AddRestaurantFragment.OnFragmentInteractionListener , MapsRouteFragment.OnFragmentInteractionListener, LoginFragment.OnFragmentInteractionListener ,BudgetFragment.OnFragmentInteractionListener {
-    private GoogleMap mMap;
 
-    private TextView mTextMessage;
+
+
 
 
 
