@@ -3,7 +3,6 @@ package co.edu.konradlorenz.myapplication.Fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -58,14 +57,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         editTextEmail=getActivity().findViewById(R.id.email_register);
         editTextPassword=getActivity().findViewById(R.id.pass_register);
 
-        sign_in_button.OnClickListener(this);
+        sign_in_button.setOnClickListener(this);
     }
     private void signIn(String email, String password){
 
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password);
     }
 
-    public void onClick(View view, View.OnClickListener){
+    public void onClick(View view){
 
         switch (view.getId()){
             case R.id.sign_in_button:
@@ -102,7 +101,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
-
         }
     }
 
