@@ -7,24 +7,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import co.edu.konradlorenz.myapplication.R;
-import co.edu.konradlorenz.myapplication.entities.Restaurant;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link AddRestaurantFragment.OnFragmentInteractionListener} interface
+ * {@link PerfilFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link AddRestaurantFragment#newInstance} factory method to
+ * Use the {@link PerfilFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddRestaurantFragment extends Fragment {
+public class PerfilFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -36,7 +33,7 @@ public class AddRestaurantFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public AddRestaurantFragment() {
+    public PerfilFragment() {
         // Required empty public constructor
     }
 
@@ -49,8 +46,8 @@ public class AddRestaurantFragment extends Fragment {
      * @return A new instance of fragment AddRestaurantFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AddRestaurantFragment newInstance(String param1, String param2) {
-        AddRestaurantFragment fragment = new AddRestaurantFragment();
+    public static PerfilFragment newInstance(String param1, String param2) {
+        PerfilFragment fragment = new PerfilFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -83,28 +80,7 @@ public class AddRestaurantFragment extends Fragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference("restaurantes");
 
-        View rootView = inflater.inflate(R.layout.activity_add_restaurant, container, false);
-        final EditText no = rootView.findViewById(R.id.valor1);
-        final EditText di = rootView.findViewById(R.id.valor2);
-        final EditText tel =  rootView.findViewById(R.id.valor3);
-        final EditText price =  rootView.findViewById(R.id.valor4);
-        final Button button =  rootView.findViewById(R.id.filter_price);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                String nom= no.getText().toString();
-                String dire = di.getText().toString();
-                long pri = Integer.parseInt(price.getText().toString());
-                long tele = Integer.parseInt(tel.getText().toString());
-                Restaurant res = new Restaurant(nom,dire,pri,tele);
-                DatabaseReference childRef = myRef.push();
-
-                // Set the child's data to the value passed in from the text box.
-                childRef.setValue(res);
-
-            }
-        });
-
+        View rootView = inflater.inflate(R.layout.activity_scrolling, container, false);
         return rootView;
 
     }

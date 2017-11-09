@@ -14,17 +14,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import co.edu.konradlorenz.myapplication.R;
-import co.edu.konradlorenz.myapplication.entities.Restaurant;
+import co.edu.konradlorenz.myapplication.entities.Commentary;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link AddRestaurantFragment.OnFragmentInteractionListener} interface
+ * {@link CommentFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link AddRestaurantFragment#newInstance} factory method to
+ * Use the {@link CommentFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddRestaurantFragment extends Fragment {
+public class CommentFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -36,7 +36,7 @@ public class AddRestaurantFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public AddRestaurantFragment() {
+    public CommentFragment() {
         // Required empty public constructor
     }
 
@@ -49,8 +49,8 @@ public class AddRestaurantFragment extends Fragment {
      * @return A new instance of fragment AddRestaurantFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AddRestaurantFragment newInstance(String param1, String param2) {
-        AddRestaurantFragment fragment = new AddRestaurantFragment();
+    public static CommentFragment newInstance(String param1, String param2) {
+        CommentFragment fragment = new CommentFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -81,22 +81,19 @@ public class AddRestaurantFragment extends Fragment {
 
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference("restaurantes");
+        final DatabaseReference myRef = database.getReference("Comentarios");
 
-        View rootView = inflater.inflate(R.layout.activity_add_restaurant, container, false);
-        final EditText no = rootView.findViewById(R.id.valor1);
-        final EditText di = rootView.findViewById(R.id.valor2);
-        final EditText tel =  rootView.findViewById(R.id.valor3);
-        final EditText price =  rootView.findViewById(R.id.valor4);
+        View rootView = inflater.inflate(R.layout.comment, container, false);
+
+        final EditText no = rootView.findViewById(R.id.com_Nombre);
+        final EditText di = rootView.findViewById(R.id.com_comentary);
         final Button button =  rootView.findViewById(R.id.filter_price);
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String nom= no.getText().toString();
-                String dire = di.getText().toString();
-                long pri = Integer.parseInt(price.getText().toString());
-                long tele = Integer.parseInt(tel.getText().toString());
-                Restaurant res = new Restaurant(nom,dire,pri,tele);
+                String nom=no.getText().toString();
+                String dire =di.getText().toString();
+                Commentary res = new Commentary(nom,dire);
                 DatabaseReference childRef = myRef.push();
 
                 // Set the child's data to the value passed in from the text box.
