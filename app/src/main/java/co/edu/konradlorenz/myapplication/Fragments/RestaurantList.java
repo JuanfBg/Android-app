@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -18,7 +19,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import co.edu.konradlorenz.myapplication.R;
+<<<<<<< HEAD:app/src/main/java/co/edu/konradlorenz/myapplication/Fragments/RestaurantList.java
 import co.edu.konradlorenz.myapplication.entities.*;
+=======
+import co.edu.konradlorenz.myapplication.entities.restaurant;
+
+>>>>>>> origin/juanfe:app/src/main/java/co/edu/konradlorenz/myapplication/Fragments/RestaurantList.java
 
 /**
  * A simple {@link Fragment} subclass.
@@ -92,6 +98,14 @@ public class RestaurantList extends Fragment {
 
         // Assign adapter to ListView
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                getFragmentManager().beginTransaction().replace(R.id.content2,new PerfilFragment().newInstance(adapter.getItem(i),"")).commit();
+            }
+        });
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference("restaurantes");
 
@@ -102,14 +116,14 @@ public class RestaurantList extends Fragment {
             // each time a new child is added.
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
-                Restaurant value = dataSnapshot.getValue(Restaurant.class);
+                restaurant value = dataSnapshot.getValue(restaurant.class);
 
                 adapter.add(value.getName());
             }
 
             // This function is called each time a child item is removed.
             public void onChildRemoved(DataSnapshot dataSnapshot){
-                Restaurant value = dataSnapshot.getValue(Restaurant.class);
+                restaurant value = dataSnapshot.getValue(restaurant.class);
                 adapter.remove(value.getName());
             }
 

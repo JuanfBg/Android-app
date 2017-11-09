@@ -1,40 +1,36 @@
 package co.edu.konradlorenz.myapplication.Fragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.design.widget.Snackbar;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-import at.markushi.ui.CircleButton;
 import co.edu.konradlorenz.myapplication.R;
-<<<<<<< HEAD
-import co.edu.konradlorenz.myapplication.entities.Restaurant;
-=======
-
-import co.edu.konradlorenz.myapplication.entities.restaurant;
->>>>>>> origin/juanfe
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link AddRestaurantFragment.OnFragmentInteractionListener} interface
+ * {@link RegisterFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link AddRestaurantFragment#newInstance} factory method to
+ * Use the {@link RegisterFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddRestaurantFragment extends Fragment {
+public class RegisterFragment extends Fragment implements View.OnClickListener {
+    Button registerbutton;
+    EditText editTextEmail, editTextPassword;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -46,7 +42,7 @@ public class AddRestaurantFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public AddRestaurantFragment() {
+    public RegisterFragment() {
         // Required empty public constructor
     }
 
@@ -59,8 +55,8 @@ public class AddRestaurantFragment extends Fragment {
      * @return A new instance of fragment AddRestaurantFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AddRestaurantFragment newInstance(String param1, String param2) {
-        AddRestaurantFragment fragment = new AddRestaurantFragment();
+    public static RegisterFragment newInstance(String param1, String param2) {
+        RegisterFragment fragment = new RegisterFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -68,21 +64,67 @@ public class AddRestaurantFragment extends Fragment {
         return fragment;
     }
 
+    FirebaseAuth.AuthStateListener mAuthListener;
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        CircleButton photo;
-        photo = getActivity().findViewById(R.id.btnImage);
-
-        photo.setOnClickListener(new View.OnClickListener() {
+        registerbutton = getActivity().findViewById(R.id.sign_up_button);
+        editTextEmail = getActivity().findViewById(R.id.email_register);
+        editTextPassword = getActivity().findViewById(R.id.pass_register);
+        registerbutton.setOnClickListener(this);
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
-            public void onClick(View view) {
-                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivity(takePictureIntent);
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    Log.i("SESION", "sesion iniciada:" + user.getEmail());
+                } else {
+                    Log.i("SESION", "SESION CERADA");
+                }
+            }
+
+
+        };
+    }
+    private void register(String email, String password){
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Log.i("SESION","USUARIO CREADO JAJAJAJAJAJJAJA");
+                }else{
+                    Log.e("SESION",task.getException()+ "");
+                }
             }
         });
     }
+
+
+    public void onClick(View view){
+
+        switch (view.getId()){
+            case R.id.sign_up_button:
+                String emailRegister=editTextEmail.getText().toString();
+
+                String passwordRegister=editTextPassword.getText().toString();
+                register(emailRegister,passwordRegister);
+                break;
+        }
+    }
+    @Override
+    public void onStart(){
+        super.onStart();
+        FirebaseAuth.getInstance().addAuthStateListener(mAuthListener);
+    }
+public void onStop(){
+    super.onStop();
+    if (mAuthListener!=null){
+        FirebaseAuth.getInstance().removeAuthStateListener(mAuthListener);
+    }
+}
 
 
     @Override
@@ -90,36 +132,10 @@ public class AddRestaurantFragment extends Fragment {
                              Bundle savedInstanceState) {
 
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference("restaurantes");
-
-        final View rootView = inflater.inflate(R.layout.activity_add_restaurant, container, false);
-        final EditText no = rootView.findViewById(R.id.valor1);
-        final EditText di = rootView.findViewById(R.id.valor2);
-        final EditText tel =  rootView.findViewById(R.id.valor3);
-        final EditText price =  rootView.findViewById(R.id.valor4);
-        final Button button =  rootView.findViewById(R.id.filter_price);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                String nom= no.getText().toString();
-                String dire = di.getText().toString();
-                long pri = Integer.parseInt(price.getText().toString());
-                long tele = Integer.parseInt(tel.getText().toString());
-                restaurant res = new restaurant(nom,dire,pri,tele);
-                DatabaseReference childRef = myRef.push();
-
-                // Set the child's data to the value passed in from the text box.
-                childRef.setValue(res);
-
-                Snackbar.make(rootView, "Se ha Agregado el restaurante", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
 
 
 
-
-            }
-        });
+        final View rootView = inflater.inflate(R.layout.activity_signup, container, false);
 
         return rootView;
 
@@ -163,4 +179,7 @@ public class AddRestaurantFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
+
 }

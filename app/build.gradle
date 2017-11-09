@@ -18,11 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    packagingOptions {
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE-FIREBASE.txt'
-        exclude 'META-INF/NOTICE'
-    }
+
 }
 
 dependencies {
@@ -33,7 +29,6 @@ dependencies {
 
 
     compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.google.firebase:firebase-database:11.0.4'
     compile 'com.google.android.gms:play-services-maps:11.0.4'
     compile 'com.android.support:design:26.+'
     compile 'com.android.support:support-vector-drawable:26.+'
@@ -41,8 +36,9 @@ dependencies {
     compile 'com.android.support:support-v4:26.+'
     compile 'org.florescu.android.rangeseekbar:rangeseekbar-library:0.3.0'
     compile 'com.github.markushi:circlebutton:1.1'
+    compile 'com.google.firebase:firebase-database:11.0.4'
+    compile 'com.google.firebase:firebase-auth:11.0.4'
     testCompile 'junit:junit:4.12'
-
 }
 apply plugin: 'com.google.gms.google-services'
 
