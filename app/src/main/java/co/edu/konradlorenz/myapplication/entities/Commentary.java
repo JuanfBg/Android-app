@@ -4,16 +4,16 @@ package co.edu.konradlorenz.myapplication.entities;
  * Created by Kevin on 25/09/2017.
  */
 
-public class commentary {
+public class Commentary {
     String commentary;
     String user;
 
-    public commentary(String commentary, String user) {
+    public Commentary(String commentary, String user) {
         this.commentary = commentary;
         this.user = user;
     }
 
-    public commentary() {
+    public Commentary() {
     }
 
     public String getCommentary() {

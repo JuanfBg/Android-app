@@ -19,12 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import at.markushi.ui.CircleButton;
 import co.edu.konradlorenz.myapplication.R;
-<<<<<<< HEAD
-import co.edu.konradlorenz.myapplication.entities.Restaurant;
-=======
-
+//import co.edu.konradlorenz.myapplication.entities.Restaurant;
 import co.edu.konradlorenz.myapplication.entities.restaurant;
->>>>>>> origin/juanfe
 
 /**
  * A simple {@link Fragment} subclass.

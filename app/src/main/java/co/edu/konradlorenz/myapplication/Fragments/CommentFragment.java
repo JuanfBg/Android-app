@@ -17,12 +17,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import org.florescu.android.rangeseekbar.RangeSeekBar;
 
 import co.edu.konradlorenz.myapplication.R;
-<<<<<<< HEAD
-import co.edu.konradlorenz.myapplication.entities.Commentary;
-=======
-
+//import co.edu.konradlorenz.myapplication.entities.Commentary;
 import co.edu.konradlorenz.myapplication.entities.commentary;
->>>>>>> origin/juanfe
+
 
 /**
  * A simple {@link Fragment} subclass.

@@ -19,12 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import co.edu.konradlorenz.myapplication.R;
-<<<<<<< HEAD:app/src/main/java/co/edu/konradlorenz/myapplication/Fragments/RestaurantList.java
 import co.edu.konradlorenz.myapplication.entities.*;
-=======
 import co.edu.konradlorenz.myapplication.entities.restaurant;
-
->>>>>>> origin/juanfe:app/src/main/java/co/edu/konradlorenz/myapplication/Fragments/RestaurantList.java
 
 /**
  * A simple {@link Fragment} subclass.
