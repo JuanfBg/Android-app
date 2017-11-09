@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import co.edu.konradlorenz.myapplication.R;
 import co.edu.konradlorenz.myapplication.entities.*;
-import co.edu.konradlorenz.myapplication.entities.restaurant;
+import co.edu.konradlorenz.myapplication.entities.Restaurant;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -112,14 +112,14 @@ public class RestaurantList extends Fragment {
             // each time a new child is added.
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
-                restaurant value = dataSnapshot.getValue(restaurant.class);
+                Restaurant value = dataSnapshot.getValue(Restaurant.class);
 
                 adapter.add(value.getName());
             }
 
             // This function is called each time a child item is removed.
             public void onChildRemoved(DataSnapshot dataSnapshot){
-                restaurant value = dataSnapshot.getValue(restaurant.class);
+                Restaurant value = dataSnapshot.getValue(Restaurant.class);
                 adapter.remove(value.getName());
             }
 

@@ -3,18 +3,9 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
-<<<<<<< HEAD
-    <string name="title_sesion">Session</string>
+    <string name="title_session">Session</string>
     <string name="title_money">Budget</string>
-    <string name="title_activity_login">Sign in</string>
-=======
     <string name="title_sesion">Sesion</string>
-    <string name="title_money">Presupuesto</string>
->>>>>>> origin/juanfe
-
-
-
-
     <string name="action_sign_in_short">Register</string>
     <string name="email">Email</string>
     <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
@@ -52,11 +43,7 @@
 
     <string name="prompt_filter_price">Filter</string>
 
-<<<<<<< HEAD
-    <string name="prompt_password">Password</string>
-=======
 
->>>>>>> origin/juanfe
     <string name="action_sign_in">Sign in or register</string>
 
     <string name="error_invalid_email">This email address is invalid</string>

@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import at.markushi.ui.CircleButton;
 import co.edu.konradlorenz.myapplication.R;
 //import co.edu.konradlorenz.myapplication.entities.Restaurant;
-import co.edu.konradlorenz.myapplication.entities.restaurant;
+import co.edu.konradlorenz.myapplication.entities.Restaurant;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -102,7 +102,7 @@ public class AddRestaurantFragment extends Fragment {
                 String dire = di.getText().toString();
                 long pri = Integer.parseInt(price.getText().toString());
                 long tele = Integer.parseInt(tel.getText().toString());
-                restaurant res = new restaurant(nom,dire,pri,tele);
+                Restaurant res = new Restaurant(nom,dire,pri,tele);
                 DatabaseReference childRef = myRef.push();
 
                 // Set the child's data to the value passed in from the text box.
