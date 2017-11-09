@@ -66,15 +66,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_maps); ->Error
+        setContentView(R.layout.activity_maps_route);// -> No activity_maps
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //mTextMessage = (TextView) findViewById(R.id.message); ->Error
+        //mTextMessage = (TextView) findViewById(R.id.message); ->Error (No message)
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        //navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener); ->ExceptionNullPointer
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        //mapFragment.getMapAsync(this); ->ExceptionNullPointer
 
 
         /*FloatingActionButton button = (FloatingActionButton) findViewById(R.id.fab_add_restaurant);
@@ -86,7 +86,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 //startActivity(intent);
             }
         });
-        Line Error*/
+        Line Error (No Button)*/
         
     }
     /**
