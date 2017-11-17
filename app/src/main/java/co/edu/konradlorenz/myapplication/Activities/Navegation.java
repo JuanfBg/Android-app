@@ -4,8 +4,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,22 +13,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-
-import com.google.android.gms.maps.GoogleMap;
 
 import co.edu.konradlorenz.myapplication.Fragments.AddRestaurantFragment;
 import co.edu.konradlorenz.myapplication.Fragments.BudgetFragment;
 import co.edu.konradlorenz.myapplication.Fragments.CommentFragment;
-import co.edu.konradlorenz.myapplication.Fragments.LoginFragment;
 import co.edu.konradlorenz.myapplication.Fragments.MapsRouteFragment;
 import co.edu.konradlorenz.myapplication.Fragments.PerfilFragment;
-import co.edu.konradlorenz.myapplication.Fragments.RegisterFragment;
 import co.edu.konradlorenz.myapplication.Fragments.RestaurantList;
 import co.edu.konradlorenz.myapplication.R;
 
 public class Navegation extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,RegisterFragment.OnFragmentInteractionListener,CommentFragment.OnFragmentInteractionListener,PerfilFragment.OnFragmentInteractionListener,RestaurantList.OnFragmentInteractionListener,AddRestaurantFragment.OnFragmentInteractionListener , MapsRouteFragment.OnFragmentInteractionListener, LoginFragment.OnFragmentInteractionListener ,BudgetFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,CommentFragment.OnFragmentInteractionListener,PerfilFragment.OnFragmentInteractionListener,RestaurantList.OnFragmentInteractionListener,AddRestaurantFragment.OnFragmentInteractionListener , MapsRouteFragment.OnFragmentInteractionListener,BudgetFragment.OnFragmentInteractionListener {
 
 
 
@@ -73,9 +68,6 @@ public class Navegation extends AppCompatActivity
 
                         case R.id.navigation_sesion:
                             //     mTextMessage.setText(R.string.title_sesion);
-
-                            FragmentManager manager = getSupportFragmentManager();
-                            manager.beginTransaction().replace(R.id.content2, new LoginFragment(),"Maps").addToBackStack("Maps").commit();
 
 
                             break;
