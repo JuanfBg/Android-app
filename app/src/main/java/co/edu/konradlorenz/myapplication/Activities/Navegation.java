@@ -17,15 +17,13 @@ import android.view.MenuItem;
 import co.edu.konradlorenz.myapplication.Fragments.AddRestaurantFragment;
 import co.edu.konradlorenz.myapplication.Fragments.BudgetFragment;
 import co.edu.konradlorenz.myapplication.Fragments.CommentFragment;
-import co.edu.konradlorenz.myapplication.Fragments.LoginFragment;
 import co.edu.konradlorenz.myapplication.Fragments.MapsRouteFragment;
 import co.edu.konradlorenz.myapplication.Fragments.PerfilFragment;
-import co.edu.konradlorenz.myapplication.Fragments.RegisterFragment;
 import co.edu.konradlorenz.myapplication.Fragments.RestaurantList;
 import co.edu.konradlorenz.myapplication.R;
 
 public class Navegation extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,RegisterFragment.OnFragmentInteractionListener,CommentFragment.OnFragmentInteractionListener,PerfilFragment.OnFragmentInteractionListener,RestaurantList.OnFragmentInteractionListener,AddRestaurantFragment.OnFragmentInteractionListener , MapsRouteFragment.OnFragmentInteractionListener, LoginFragment.OnFragmentInteractionListener,BudgetFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,CommentFragment.OnFragmentInteractionListener,PerfilFragment.OnFragmentInteractionListener,RestaurantList.OnFragmentInteractionListener,AddRestaurantFragment.OnFragmentInteractionListener , MapsRouteFragment.OnFragmentInteractionListener,BudgetFragment.OnFragmentInteractionListener {
 
 
 
@@ -70,9 +68,6 @@ public class Navegation extends AppCompatActivity
 
                         case R.id.navigation_sesion:
                             //     mTextMessage.setText(R.string.title_sesion);
-
-                            FragmentManager manager = getSupportFragmentManager();
-                            manager.beginTransaction().replace(R.id.content2, new LoginFragment(),"Maps").addToBackStack("Maps").commit();
 
 
                             break;
