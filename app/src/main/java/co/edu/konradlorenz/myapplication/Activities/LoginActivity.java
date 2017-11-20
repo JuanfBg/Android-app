@@ -74,13 +74,15 @@ import co.edu.konradlorenz.myapplication.R;
 
     private void createAccount(String email, String password) {
         Log.d(TAG, "createAccount:" + email);
-        if (!validateForm()) {
+        /*if (!validateForm()) {
             return;
         }
-
+        *///Not validate
         //      showProgressDialog();
 
         // [START create_user_with_email]
+        email="abc@def.com";//Assign value to email string.
+        password="123";//Assign value to password string.
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

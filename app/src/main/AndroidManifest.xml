@@ -43,6 +43,7 @@
             android:name=".Activities.Navegation"
             android:label="restaurant aplication"
             android:theme="@style/AppTheme.NoActionBar"/>
+        </activity>
 
 
 

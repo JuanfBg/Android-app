@@ -21,7 +21,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import co.edu.konradlorenz.myapplication.Fragments.BudgetFragment;
-import co.edu.konradlorenz.myapplication.Fragments.LoginFragment;
+import co.edu.konradlorenz.myapplication.Activities.LoginActivity;//LoginFragment
 import co.edu.konradlorenz.myapplication.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -44,7 +44,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 case R.id.navigation_sesion:
                //     mTextMessage.setText(R.string.title_sesion);
-                    Intent intent = new Intent(MapsActivity.this, LoginFragment.class);
+                    Intent intent = new Intent(MapsActivity.this, LoginActivity.class);
                     startActivity(intent);
 
                     return true;
