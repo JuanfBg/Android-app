@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
@@ -37,11 +37,17 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
         <activity
             android:name=".Activities.MapsActivity"
             android:label="@string/title_activity_maps">
             android:name=".Activities.Navegation"
+            android:label="restaurant aplication"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+
+
+        <activity
+            android:name=".Activities.LoginActivity"
             android:label="restaurant aplication"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

@@ -45,7 +45,7 @@
         android:id="@+id/pass_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:imeActionId="@+id/login"
+
         android:imeOptions="actionUnspecified"
         android:layout_marginTop="8dp"
         android:drawableLeft="@drawable/ic_lock_outline_24dp"
