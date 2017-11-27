@@ -8,6 +8,9 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <!-- To auto-complete the email text field in the login form with the User's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -34,26 +37,39 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+
+
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".Activities.Navegation"
             android:label="restaurant aplication"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-
-
         <activity
-            android:name=".Activities.LoginActivity"
+            android:name=".Activities.PlacePickerActivity"
             android:label="restaurant aplication"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/AppTheme.NoActionBar"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
     </application>
+
+
+
 
 </manifest>

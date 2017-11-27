@@ -29,7 +29,6 @@ public class Navegation extends AppCompatActivity
 
 
 
-
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +40,8 @@ public class Navegation extends AppCompatActivity
                 .replace(R.id.content2,new MapsRouteFragment(),"Maps")
                 .addToBackStack("Maps")
                 .commit();
+
+
 
 
 
@@ -70,6 +71,7 @@ public class Navegation extends AppCompatActivity
                             //     mTextMessage.setText(R.string.title_sesion);
 
 
+
                             break;
 
                         case R.id.navigation_money:
@@ -85,6 +87,8 @@ public class Navegation extends AppCompatActivity
 
 
     }
+
+
 
     @Override
     public void onBackPressed() {

@@ -101,17 +101,7 @@
                 </android.support.design.widget.TextInputLayout>
 
 
-        <at.markushi.ui.CircleButton
 
-
-            android:id="@+id/btnImage"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1.19"
-            android:src="@drawable/ic_menu_camera"
-            rsb:cb_color="#b0120a"
-            rsb:cb_pressedRingWidth="10dip" />
 
 
         <Button

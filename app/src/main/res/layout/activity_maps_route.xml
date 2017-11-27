@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    tools:context="co.edu.konradlorenz.myapplication.Activities.PlacePickerActivity"
     >
 
     <FrameLayout
@@ -13,7 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:onClick="goPlacePicker"
+          android:text="kakakakoaksdpafksaf"
+          />
 
 
 
@@ -22,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
+
 
 
 
